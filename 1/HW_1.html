@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HW1</title>
+</head>
+<body>
+    <pre>
+    <script>
+        
+        var userName = prompt("Введіть Ваше ім'я   ");
+        var userSurname = prompt("Введіть Ваше прізвище  ");
+        var userAge = prompt("Введіть Ваш вік  ");
+
+
+        var number1 = prompt("Введіть першу цифру  ");
+        var number2 = prompt("Введіть другу цифру  ");
+        var number3 = prompt("Введіть третю цифру  ");
+        var numberSummary; 
+
+            // Преобразуем введенные строки в числа
+            number1 = parseFloat(number1);
+            number2 = parseFloat(number2);
+            number3 = parseFloat(number3);
+
+        document.write('<header style="width: 800px; height: 200px; background-color: #e0e0e0;">Header</header>');
+        document.write('<div style="display: flex;">');
+        document.write('<nav style="width: 100px; height: 400px; background-color: #c0c0c0;">Nav</nav>');
+
+        document.write('<section style="width: 700px;  height: 400px; background-color: #f0f0f0;">');
+
+            document.writeln("ім'я  ", userName);
+            document.writeln("прізвище  ", userSurname);
+            document.writeln("вік  ", userAge);
+
+                numberSummary = (number1 + number2 + number3)/3;
+
+            document.writeln("Середнє арифметичне 3-ох введених цифр:   " + numberSummary);
+
+        document.write('</div>');
+        document.write('<footer style="width: 800px; height: 200px; background-color: #a0a0a0;">Footer</footer>');
+        
+
+
+    </script>
+    </pre>
+    <pre>
+    <script>
+        var x = 6, y = 14, z = 4;
+        console.log(x += y - x++ * z) ;
+        document.writeln(x);
+
+            /* 1. Перший виконується інкремент -> дає результат 6 (потім +1, але не встигає)
+               2. 6*z = 24
+               3. 14(y)-24 = -10
+               4. -4
+            */
+        var x = 6, y = 14, z = 4;
+        console.log(z = --x - y * 5) ;
+        document.writeln(z);
+            /* 1. префіксний декримент = 5
+               2. 12(у) * 5 =70
+               3. 5 - 70 = -65
+               4. z = -65
+            */
+        var x = 6, y = 14, z = 4;
+        var c = 0;
+        console.log(c= y /= x + 5 % z) ;
+        document.writeln(c);
+            /* 1. 5%4 = 1
+               2. 6+1 = 7
+               3. 14/7 = 2
+               4. присваиваем y = 2
+            */
+        var x = 6, y = 14, z = 4;
+        var c = 0;
+        console.log (c = z - x++ + y * 5) ;
+        document.writeln(c);    
+            /* 1. x=6
+               2. y*5 = 14*5 = 70
+               3. z-6 = 4-6=-2
+               4. -2+70=-68
+            */
+        var x = 6, y = 14, z = 4;
+        var c = 0;
+        console.log (c = y - x++ * z) ;
+        document.writeln(c);    
+            /* 1. 6
+               2. 6*z=6*4=24
+               3. y-24=14-24=-10
+            */
+
+    </script>
+    </pre>
+</body>
+</html>
