@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HW2</title>
+</head>
+<body>
+   
+    <script>
+//порожній квадрат
+
+        for(var i=0;i<10;i++){
+            if(i === 0 || i === 9){
+                    for(var j=0;j<10;j++){
+                        document.write("*");
+            }   
+        }
+        else{
+            document.write("* &nbsp;");
+            for(var t=0;t<8;t++){
+                document.write("&nbsp;&nbsp;");
+        }
+            document.write("&nbsp; * ");
+        
+        }
+        document.write("<br>")
+    }
+
+//прямокутний трикутник
+
+        for(var i = 0; i<6; i++) {
+            if(i === 5){
+                for(var j = 0; j<6; j++) {
+                    document.write("*");
+            }
+        }
+    
+    else {
+            for(var t=0; t<i; t++) {
+                document.write("*");
+             }
+        document.write("<br>");
+        }
+    }
+
+    document.write("<br>");
+
+//рівносторонній трикутник
+            for(var i = 0; i<6; i++) {
+                for(var j = 0; j <= 6 - i; j++) {
+                    document.write("#");
+        }
+    
+            for(var t=0; t <= 2 * i; t++) {
+                document.write("*");
+    }
+        document.write("<br>");
+    
+        }
+
+//ромб
+      /*       for(var i = 0; i<=6; i++) {
+                for(var j = 0; j <= 6 - i; j++) {
+                    document.write("#");
+        }
+    
+            for(var t=0; t <= 1 * i-1; t++) {
+                document.write("*");
+    }
+    document.write("<br>");
+
+    for(var t=5; t >=1; t--) {
+        for(var j = 0; j <= 6 - t; j++)
+        document.write("#");
+    }
+            for(var t=0; t <= 1 * t-1; t++) {
+                document.write("*");
+            }
+        document.write("<br>");
+        
+    }    */   
+
+//ромб
+    for (var h = 1; h <= 5; h++) {
+        for (var s = 1; s <= 5 - h; s++) {
+            document.write("&nbsp;&nbsp;");
+        }
+
+        for (var r = 1; r <= 2 * h - 1; r++) {
+            document.write("*");
+        }
+
+        document.write("<br>");
+        }
+        for (var j = 4; j >= 1; j--) {
+            for (var s = 1; s <= 5 - j; s++) {
+                document.write("&nbsp;&nbsp;");
+            }
+
+            for (var r = 1; r <= 2 * j - 1; r++) {
+                document.write("*");
+            }
+
+            document.write("<br>");
+        }
+    </script>
+
+</body>
+</html>
