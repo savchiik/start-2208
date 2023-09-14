@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HW4</title>
+</head>
+<body>
+    <style>
+        .user {
+            width: 500px;
+            height: 150px;
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            grid-auto-rows: 250px;
+            border: 1px solid transparent;
+        }
+        .user_image img{
+            max-width: 100%;
+            max-height: 100%;
+        }
+        .button {   
+            background-color: black;
+            color: white;
+            text-align: center;
+            border: none;
+            padding: 20px 10px;
+            font-size: 16px;
+        }
+    
+</style>
+<button id="add_person" class="button">Додати персонажа</button>
+        <div class="user">
+            <div class="user_image">
+                <!-- <img src="https://www.cartonionline.com/immagini/oggy_e_i_maledetti_scarafaggi/oggy_e_i_maledetti_scarafaggi_01.jpg"alt=""> -->
+            
+            </div>
+            <div class="user_info">
+          <!--       <div><span>Ім'я</span></div>
+                <div><span>Прізвище</span></div>
+                <div><span>Вік</span></div>
+                <div><span>Телефон</span></div>
+                <div><span>Пошта</span></div> -->
+            </div>   
+
+
+            <script>
+
+                let name, surname, age, phone, email, img;                
+                const btn = document.getElementById("add_person");
+                const user_image =document.querySelector(".user_image");
+                const user_info = document.querySelector('.user_info');  
+                const user_border = document.querySelector('.user');
+
+                btn.onclick = function add() {
+                   name = prompt("Введіть ім'я", "Kate");
+                   surname = prompt("Введіть прізвище", "Gogo");
+                   age = prompt("Введіть вік", "89");
+                   phone = prompt("Введіть телефон", "+3805884782");
+                   email = prompt("Введіть пошту", "gogo@gmail.com");
+                   img = prompt("Посилання на зображення", "https://www.cartonionline.com");
+                   
+
+                   const userInfoHTML = `
+                 <div><span>Ім'я: ${name}</span></div>
+                 <div><span>Прізвище: ${surname}</span></div>
+                 <div><span>Вік: ${age}</span></div>
+                 <div><a href="tel:${phone}">Телефон: ${phone}</a></div>
+                 <div><a href="mailto:${email}">Пошта: ${email}</a></div>
+                 
+                 `;
+                   const userImgHTML = `
+                    <img src="${img}" alt="img">`;
+
+                   user_info.innerHTML = userInfoHTML;
+                   user_image.innerHTML = userImgHTML;
+                   user_border.style.border = "1px solid black";
+            }
+            </script>
+            <!-- <div><span>Пошта: ${email}</span></div> 
+            <div><span>Телефон: ${phone}</span></div>
+            -->
+</body>
+</html>
