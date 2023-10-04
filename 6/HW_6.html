@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HW6</title>
+</head>
+<body>
+    <script>
+        function human(name, surname, age, email){
+    this.name = name;
+    this.surname = surname;
+    this.age = age;
+    this.email = email;
+}
+
+let a1 = new human ("Goga", "Gogidze", 5, "Gogidze@gmail.com");
+let a2 = new human ("Giga", "Gogodzez", 3, "GogodzezQ@gmail.com");
+let a3 = new human ("Mark", "Torn", 2, "Torn@gmail.com");
+let a4 = new human ("Lana", "Truman", 3, "Truman@gmail.com");
+let a5 = new human ("Tom", "Lefy", 55, "Lefy@gmail.com");
+
+let people = [a1, a2, a3, a4, a5];
+
+for (let i = 0; i < people.length; i++) {
+    document.write("<strong>Name:</strong> " + people[i].name + " <strong>Surname: </strong>" + people[i].surname + "<strong> Age:</strong> " + people[i].age + " <strong>Email:</strong> " + people[i].email + "<br />");
+}
+
+people.sort(function(a,b){
+    return a.age - b.age;
+})
+console.log(people);
+    </script>
+</body>
+</html>
