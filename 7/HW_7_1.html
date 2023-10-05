@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HW_7.1</title>
+</head>
+<body>
+    <script>
+
+        /* Реализовать класс MyString..... */
+
+        class MyString {
+            constructor(inputString){
+                this.inputString = inputString;
+            }
+            reverse(){
+                return this.inputString.split('').reverse().join('');
+            }
+            ucFirst(){
+                return this.inputString.charAt(0).toUpperCase() + this.inputString.slice(1);
+            }
+            ucWords() {
+                /* return this.inputString.split(' ').toLowerCase()+ this.inputString.slice(1); */
+                const words = this.inputString.split(' ');
+                    for (let i = 0; i < words.length; i++) {
+                        words[i] = words[i].toLowerCase();
+                        words[i] = words[i].charAt(0).toUpperCase() + words[i].slice(1);
+                    }
+                return words.join(' ');
+    }
+        }
+    const myString = new MyString('hello world');
+        console.log(myString.reverse()); 
+        console.log(myString.ucFirst()); 
+        console.log(myString.ucWords());
+    </script>
+</body>
+</html>
