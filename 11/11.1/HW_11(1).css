@@ -1,0 +1,68 @@
+body {
+    margin: 2rem;
+    display: inline-flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+input {
+    font-size: 1rem;
+    width: 300px;
+    border-radius: 10px;
+    padding: 10px;
+    border: 2px solid gray;
+
+}
+div {
+    background-color: rgb(225, 237, 226);
+    min-width: 220px;
+    max-width: 100%;
+    min-height: 40px;
+    padding: 10px;
+    border-radius: 15px;
+    color: green;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+}
+span {
+    font-size: 2em; 
+    display: inline-block;
+
+}
+button {
+    font-size: 1.5rem;
+    background-color: red;    
+    color: lightcyan;
+    border: none;
+    cursor: pointer;
+    border-radius: 20px;
+    padding: 8px;
+    width: 40px;
+}
+button:hover {
+    background-color: darkred;    
+}
+p {
+    font-size: 1.5rem;
+    color:red;
+    font-weight: 500;
+    background-color: rgb(255, 227, 227);
+    padding: 13px;
+    border-radius: 25px;
+}
+.green {
+    border: 4px solid green;
+}
+.red {
+    border: 4px solid red;
+}
+.green-text {
+    color: rgb(22, 99, 27);
+}
+.red-text {
+    color: rgb(99, 22, 22);
+}
