@@ -150,59 +150,71 @@ toppings.forEach(function (topping) {
     });
 });
 
+
 function addImgTable(src) {
     const img = document.createElement("img");
     const table = document.querySelector(".table");
     img.src = src;
     table.append(img)
-}
+} 
 
 // Контакти
 const userName = document.getElementById("name"),
     userPhone = document.getElementById("phone"),
-    userEmail = document.getElementById("email")
+    userEmail = document.getElementById("email"),
+    errorMessage = document.getElementById("error-message");
 
 userName.addEventListener("input", () => {
-    const patternName = /^[а-яґєїі-]{2,20}$/i;
-    if (validatorREG(userName.value, patternName)) {
-        userName.classList.add("success")
-        userName.classList.remove("error");
-        pizza.userName = userName.value;
-    } else {
-        userName.classList.add("error")
-        userName.classList.remove("success");
-        pizza.userName = "";
-    }
-})
+    validateAndSetField(userName, /^[а-яґєїі-]{2,20}$/i, "userName");
+    checkFormValidity();
+});
 
 userPhone.addEventListener("input", function () {
-    const pattern = /^\+380\d{9}$/;
-    if (validatorREG(this.value, pattern)) {
-        console.log("+");
-        this.classList.add("success")
-        this.classList.remove("error");
-        pizza.userPhone = this.value;
-    } else {
-        this.classList.add("error")
-        this.classList.remove("success");
-        pizza.userPhone = "";
-    }
-})
+    validateAndSetField(userPhone, /^\+380\d{9}$/, "userPhone");
+    checkFormValidity();
+});
 
 userEmail.addEventListener("input", function () {
-    const pattern = /^[a-z.0-9-]+@[a-z.-0-9]+\.[a-z.]{2,8}$/;
-    if (validatorREG(this.value, pattern)) {
-        console.log("+");
-        this.classList.add("success")
-        this.classList.remove("error");
-        pizza.userMail = this.value;
-    } else {
-        this.classList.add("error")
-        this.classList.remove("success");
-        pizza.userMail = "";
-    }
-})
+    validateAndSetField(userEmail, /^[a-z.0-9-]+@[a-z.-0-9]+\.[a-z.]{2,8}$/, "userMail");
+    checkFormValidity();
+});
 
+function validateAndSetField(inputField, pattern, fieldName) {
+    const isValid = validatorREG(inputField.value, pattern);
+    if (isValid) {
+        inputField.classList.add("success");
+        inputField.classList.remove("error");
+        pizza[fieldName] = inputField.value;
+    } else {
+        inputField.classList.add("error");
+        inputField.classList.remove("success");
+        pizza[fieldName] = "";
+    }
+    return isValid;
+}
+
+function checkFormValidity() {
+    const isValidForm = validateForm();
+    errorMessage.innerText = isValidForm ? "" : "Будь-ласка, перевірте правильність набору данних";
+}
+
+function validateForm() {
+    let isValid = true;
+
+    if (!validateAndSetField(userName, /^[а-яґєїі-]{2,20}$/i, "userName")) {
+        isValid = false;
+    }
+
+    if (!validateAndSetField(userPhone, /^\+380\d{9}$/, "userPhone")) {
+        isValid = false;
+    }
+
+    if (!validateAndSetField(userEmail, /^[a-z.0-9-]+@[a-z.-0-9]+\.[a-z.]{2,8}$/, "userMail")) {
+        isValid = false;
+    }
+
+    return isValid;
+}
 
 //скидка 
 
@@ -225,12 +237,19 @@ function clearSelection() {
     
     pizza.pizzaSause = [];
     pizza.pizzaTopping = [];
-  
+
+    
+    const table = document.querySelector(".table");
+    table.innerHTML = '';
+
+    
+    addImgTable("Pizza_pictures/klassicheskij-bortik_1556622914630.png");
+
     
     show(pizza);
-  
+
     
     clearButton.style.display = "none";
-  }
+}
 clearButton.addEventListener("click", clearSelection);
 show(pizza)

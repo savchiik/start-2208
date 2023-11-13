@@ -185,6 +185,8 @@ input[type="radio"], input[type="checkbox"] {
 .table > img {
     display: inline-block;
     position: absolute;
+    width: 597px;
+    height: 398px;
     left: 0;
     top: 0;
     right: 0;
@@ -414,4 +416,10 @@ footer > form > div > p {
     background: linear-gradient(50deg, red, #d60000);
     color: white;
     border: none;
+  }
+
+  #error-message {
+    color: darkred;
+    text-align: center;
+    background-color: white;
   }
