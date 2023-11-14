@@ -252,4 +252,11 @@ function clearSelection() {
     clearButton.style.display = "none";
 }
 clearButton.addEventListener("click", clearSelection);
+
+/* const confirmOrderButton = document.querySelector('.button'); */
+
+document.getElementById("test").onclick=function(e){
+    e.preventDefault();
+     /* alert("зупинено подію!"); */};
+
 show(pizza)
