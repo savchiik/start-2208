@@ -1,0 +1,290 @@
+:root{
+    --text-color-green : #87F54E;
+    --text-color-white: #fff
+}
+
+body{
+    background-image: url("../img/sapce.png");
+}
+
+.hide {
+    display: none !important;
+}
+
+ul, li, body {
+    padding: 0;
+    margin: 0;
+}
+
+.preloader{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    gap: 20%;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background-image: url("../img/space-ship.png");
+    background-size: 100%;
+}
+   
+
+.preloader_ship{
+    transform: scale(1);
+    animation: ship 1s linear 1 forwards;
+}
+
+.flex{
+    display: flex;
+}
+
+.header{
+    justify-content: space-between;
+}
+
+.navigation {
+    align-items: center;
+    width: 30%;
+}
+
+.navigation li {
+    width: 33%;
+}
+.navigation a{
+    color: var(--text-color-green);
+    text-decoration: none;
+    font-size: 2rem;
+    display: block;
+    width: 100%;
+    text-align: center;
+    height: 100%;
+}
+
+.location{
+color: var(--text-color-white);
+align-items: center;
+}
+.location-planet > img{
+    position: relative;
+    left: -15%;
+    animation: rotate 20s linear infinite;
+}
+.location > div:nth-child(1){
+    flex-grow: 1;
+}
+.location > div:nth-child(2){
+    flex-grow: 5;
+}
+
+.planet-information > div {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+} 
+
+.planet-information > div > div:nth-child(2)::before{
+display: inline-flex;
+content : "*";
+align-items: center;
+justify-content: center;
+margin-right: 1rem;
+}
+.characters{
+    flex-direction: row;
+}
+.btns-data{
+    width: 100%;
+    justify-content: space-evenly;
+    cursor: pointer;
+}
+.btns-data button{
+    background-color: #92fb5e8a;
+    color: black;
+    font-weight: bold;
+    width: 40%;
+    border: none;
+    box-sizing: border-box;
+    padding: 1.5rem 0;
+}
+
+.body{
+    width: 1000px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    gap: 20px 5%
+}
+.card{
+    width: 30%;
+    border-radius: 8px 8px 16px 16px;
+    position: relative;
+    background-color: var(--text-color-green);
+    overflow: hidden;
+}
+
+.bold{
+    font-weight: bold;
+}
+
+/* .card button{
+    position: absolute;
+    top: 0;
+    left: 0;
+} */
+.characters-iformation{
+    color: black;
+    padding: 1rem;
+    padding-bottom: 3rem;
+
+}
+/* .card-image {
+    position: relative;
+} */
+
+.go {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    background-color: #333;
+    color: var(--text-color-green);
+    border-radius: 50%; 
+    border: 2px solid var(--text-color-green);
+    cursor: pointer;
+    font-size: 2rem;
+    align-items: center;
+    top: 262px;
+    left: 217px;
+}
+
+.start {
+    background-color: #333;
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    color: white;
+    width: 60px;
+    height: 60px;
+    border: none; 
+    border-radius: 50%; 
+    cursor: pointer;
+    align-items: center;
+}
+.start i{
+    font-size: 35px;
+}
+
+.filled i{
+    color: yellow;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 50px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.9);
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+.modal3 {
+
+    
+    display: none;
+    position: fixed;
+    padding-top: 50px;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.9);
+    align-items: center;
+}
+
+.modal-content3 {
+    position: fixed;
+    margin: auto;
+    width: 80%;
+    max-width: 400px;
+    background-color: white;
+    border-radius: 20px;
+}
+
+.box-gray {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    width: 65%; 
+    height: 500px;
+    background-color: white;
+    border-radius: 20px;
+}
+.modal-content3 img {
+    max-width: 100%;
+   
+    top: 170px;
+  left: 334px;
+}
+
+.close3 {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close3:hover,
+.close3:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+@keyframes ship {
+    from{
+        transform: scale(1);
+    }
+    to{
+        transform: scale(0);
+    }
+}
+
+@keyframes rotate {
+    from{
+        transform: rotateZ(0deg);
+    }
+    to{
+        transform: rotateZ(360deg);
+    }
+}
